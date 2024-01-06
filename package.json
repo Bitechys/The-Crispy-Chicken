@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "git": "git add . && git commit -m 'update' && git push",
-    "predeploy": "ng build --configuration production --base-href https://mohamedfashid.github.io/The-Crispy-Chicken/",
+    "predeploy": "ng build --configuration production --base-href https://Bitechys.github.io/The-Crispy-Chicken/",
     "deploy": "gh-pages -d dist/the-crispy-chicken",
     "upload": "ng build --configuration production --base-href ./"
   },
