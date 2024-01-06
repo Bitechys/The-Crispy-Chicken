@@ -37,7 +37,7 @@ export class MainService {
     {
       "name": "About us",
       "open": false,
-      "url": "/aboutus",
+      "url": "/about",
       // "child": [
       //   {
       //     "name": "CC India",

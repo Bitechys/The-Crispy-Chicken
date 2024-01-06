@@ -9,6 +9,7 @@ import { HalalPolicyComponent } from './pages/halal-policy/halal-policy.componen
 import { FranchiseComponent } from './pages/franchise/franchise.component';
 import { CateringComponent } from './pages/catering/catering.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path : "home",
     component : HomeComponent
+  },
+  {
+    path : "about",
+    component : AboutComponent
   },
   {
     path : "menu",

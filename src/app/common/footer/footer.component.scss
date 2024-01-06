@@ -8,6 +8,32 @@
   background-size: cover;
 }
 
+.colalign{
+  display: flex;
+  flex-direction: column;
+  // gap: 5px;
+  line-height: 1.5;
+}
+
+.flag {
+  position: relative;
+  width: 22px;
+  height: 16px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.france {
+  background: linear-gradient(
+    to right,
+    #192f8e 33%,
+    #fff 33%,
+    #fff 67%,
+    #e01414 0
+  );
+}
+
+
 
 
 .mainlist{

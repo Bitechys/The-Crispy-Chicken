@@ -101,7 +101,7 @@
         <ng-container *ngFor="let item of this.service.menu; let i = index;">
             <!-- <a routerLink="{{item.url}}" class="nav-item nav-link">{{item.name}}</a> -->
             <div class="sidebar" (click)="show(i)" >
-              <div class="main" [routerLink]="item.url" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">
+              <div class="main" [routerLink]="!item.child ? item.url : null" data-bs-dismiss="offcanvas"  [attr.data-bs-target]="!item.child ? '#offcanvasResponsive' : null">
                 <div class="rel">{{item.name}} <span><img src="assets/image/halal-logo.png" alt="" class="halal_l" *ngIf="item.name == 'Our food'"></span></div>
                 <div class="plus" [class.minus]="this.c_selected[i]" *ngIf="item.child"></div>
               </div>

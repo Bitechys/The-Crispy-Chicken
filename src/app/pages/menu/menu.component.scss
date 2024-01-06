@@ -10,7 +10,8 @@
   .con {
     position: absolute;
     color: #fff;
-    font-size: 5.5vw;
+    // font-size: 5.5vw;
+    font-size: 5.5rem;
     font-family: "Rowdies";
     top: 15%;
     left: 53%;
@@ -18,7 +19,8 @@
     .mtxt {
         margin-top: 5px;
       font-family: "DM";
-      font-size: 4vw;
+      // font-size: 4vw;
+      font-size: 4rem;
     }
   }
 }
@@ -33,7 +35,8 @@
     .con {
       position: absolute;
       color: #fff;
-      font-size: 5.5vw;
+      // font-size: 5.5vw;
+      font-size: 5rem;
       font-family: "Rowdies";
       top: 20%;
       left: 55%;
@@ -41,13 +44,14 @@
       .mtxt {
           margin-top: 20px;
         font-family: "DM";
-        font-size: 1.3vw;
+        // font-size: 1.3vw;
+        font-size: 1.3rem;
       }
     }
   }
 
 .com-rate{
-    background-color: $yel;
+    background-color: $white;
     width: fit-content;
     margin-top: 30px;
     padding: 10px 15px;
@@ -67,9 +71,9 @@
     
 .title {
     height: 70px;
-    color: #fff;
+    color: #333;
     // background-color: #fff;
-    background-color: $yel;
+    background-color: $white;
     padding: 10px;
     text-align: center;
     border: 2px dashed $primary;
@@ -79,7 +83,7 @@
     align-items: center;
     justify-content: center;
     font-family: 'Rowdies';
-    text-shadow: 2px 2px #676767;
+    text-shadow: 2px 2px #d3d3d3;
   }
   .wid {
     height: 200px;
@@ -105,7 +109,7 @@
       justify-content: space-between;
 
       .rate{
-        background-color: $yel;
+        background-color: $white;
         width: fit-content;
         margin-top: 15px;
         margin: 0 auto;

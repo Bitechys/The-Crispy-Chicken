@@ -46,6 +46,10 @@
   opacity: 0;
 }
 
+.hom_txt{
+  max-width: 500px;
+}
+
 .image {
   opacity: 1;
   cursor: pointer;
@@ -322,9 +326,12 @@
   background-size: cover;
 }
 
-.hero-header img {
+.hero-header .pan {
   animation: imgRotate 50s linear infinite;
+ 
 }
+
+
 
 @keyframes imgRotate {
   100% {
@@ -394,3 +401,33 @@
   border-radius: 38px 38px 0 0;
 }
 
+
+
+// .gallery{
+//   .g1{
+//     // opacity: 1;
+//     display: block;
+//     transition: all 0.1s ease;
+//   }
+//   .g2{
+//     // position: absolute;
+//     // top: 0;
+//     // left: 0;
+//     // opacity: 0;
+//     display: none;
+//     transition: all 0.1s ease;
+//   }
+
+//   &:hover{
+//     .g1{
+//       // opacity: 0;
+//       display: none;
+//       transition: all 0.1s ease;
+//     }
+//     .g2{
+//       // opacity: 1;
+//       display: block;
+//       transition: all 0.1s ease;
+//     }
+//   }
+// }

@@ -33,7 +33,7 @@ export class HomeComponent implements AfterViewInit {
     this.tl.fromTo(".zoom", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 1 })
     this.tl.fromTo(".but", { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 1.5 })
 
-    $(".img-owl-carousel .owl-carousel").owlCarousel({
+    $(".imgcaro_1 .img-owl-carousel .owl-carousel").owlCarousel({
       autoplay: true,
       smartSpeed: 1000,
       center: true,
@@ -45,7 +45,34 @@ export class HomeComponent implements AfterViewInit {
         '<i class="fa fa-angle-left" aria-hidden="true"></i>',
         '<i class="fa fa-angle-right" aria-hidden="true"></i>'
     ],
-    navContainer: '.img-owl-carousel .custom-nav',
+    navContainer: '.imgcaro_1 .img-owl-carousel .custom-nav',
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        992: {
+          items: 1
+        }
+      }
+    });
+
+    
+    $(".imgcaro_2 .img-owl-carousel .owl-carousel").owlCarousel({
+      autoplay: true,
+      smartSpeed: 1000,
+      center: true,
+      margin: 24,
+      dots: false,
+      loop: true,
+      nav: true,
+      navText: [
+        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ],
+    navContainer: '.imgcaro_2 .img-owl-carousel .custom-nav',
       responsive: {
         0: {
           items: 1
@@ -83,19 +110,34 @@ export class HomeComponent implements AfterViewInit {
     
   }
 
-  imgcaro = [
+  imgcaro_1 = [
     {
-      "img": "assets/image/caro/caro1.jpg",
+      "img": "assets/image/caro/caro1.png",
     },
     {
-      "img": "assets/image/caro/caro2.jpg",
+      "img": "assets/image/caro/caro2.png",
     },
     {
-      "img": "assets/image/caro/caro3.jpg",
+      "img": "assets/image/caro/caro3.png",
+    },
+    // {
+    //   "img": "assets/image/caro/caro4.png",
+    // },
+  ]
+
+  imgcaro_2 = [
+    {
+      "img": "assets/image/caro/caro4.png",
     },
     {
-      "img": "assets/image/caro/caro4.jpg",
+      "img": "assets/image/caro/caro5.png",
     },
+    {
+      "img": "assets/image/caro/caro6.png",
+    },
+    // {
+    //   "img": "assets/image/caro/caro4.png",
+    // },
   ]
 
   caro = [
