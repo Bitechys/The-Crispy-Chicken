@@ -6,6 +6,8 @@
 .hover_item{
     // overflow-y: hidden;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 300px;
     cursor: pointer;
 

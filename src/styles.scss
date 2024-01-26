@@ -275,11 +275,7 @@ h1{
 
 .img-carousel .owl-item .img-item {
   width: 100%;
-  // min-height: 300px;
-
-  @include sm {
-    min-width: 750px;
-  }
+  min-width: 300px;
 }
 
 .img-carousel .owl-item.center .img-item {
@@ -428,6 +424,40 @@ h1{
 
 .section-title.text-start::before,
 .section-title.text-end::after {
+  display: none;
+}
+
+/*** Section Title ***/
+.section-title-wh {
+  position: relative;
+  display: inline-block;
+  font-family: "RowdiesRegular";
+}
+
+.section-title-wh::before {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  left: -55px;
+  margin-top: -1px;
+  background: #fff;
+}
+
+.section-title-wh::after {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 2px;
+  top: 50%;
+  right: -55px;
+  margin-top: -1px;
+  background: #fff;
+}
+
+.section-title-wh.text-start::before,
+.section-title-wh.text-end::after {
   display: none;
 }
 

@@ -164,7 +164,7 @@ export class HomeComponent implements AfterViewInit {
     {
       "head": "Menu Innovation",
       "con": "Participate in the creation of new menu items and stay ahead of evolving food trends",
-      "img": "assets/image/bulb.jpg"
+      "img": "assets/image/menu1/19.png"
     },
   ]
 

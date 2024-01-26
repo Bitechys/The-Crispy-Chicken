@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { MainService } from './service/main.service';
 import * as AOS from 'aos';
+import { PreloadService } from './service/preload.service';
 
 
 @Component({
@@ -16,8 +17,20 @@ import * as AOS from 'aos';
 })
 export class AppComponent implements AfterViewInit{
   title = 'TheCrispyChicken';
+  loading: boolean = true;
+  
+  constructor(public service: MainService, public router: Router, private preloadService: PreloadService) { }
 
-  constructor(public service: MainService, public router: Router) { }
+  ngOnInit(): void {
+    this.preloadService.preloadAssets().then(() => {
+      console.log('All assets preloaded successfully');
+      this.loading = false
+      // Proceed with the rest of your application logic.
+    }).catch((error) => {
+      console.error('Error preloading assets:', error);
+      // Handle errors, e.g., display a message to the user.
+    });
+  }
 
   ngAfterViewInit(): void {
     AOS.init({once:true});

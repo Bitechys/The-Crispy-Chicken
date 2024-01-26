@@ -32,7 +32,8 @@ export class CateringComponent implements OnInit {
     {
       "title": "Customized Menus",
       "content": "Tailor your menu to match your event's theme and your guests' preferences. Our team works closely with you to create the perfect culinary experience.",
-      "img": "assets/image/cater/img4.jpg"
+      "img": "assets/image/cater/img4.jpg"  
+      
     },
     // {
     //   "title": "Seamless Service",
