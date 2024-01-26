@@ -206,6 +206,26 @@
     }
 }
 
+///home
+
+.home.navbar  .navbar-brand img {
+    // margin-top: -100px;
+    max-height: 150px;
+    transition: all .5s ease;
+    position: absolute;
+    top: 0;
+    opacity: 0 !important;
+}
+
+.home.sticky-top.navbar .navbar-brand img {
+    max-width: 90px;
+    transition: all 0.3s ease;
+    position: relative;
+    opacity: 1 !important;
+}
+
+///home
+
 .navbar .navbar-brand img {
     // margin-top: -100px;
     max-height: 150px;

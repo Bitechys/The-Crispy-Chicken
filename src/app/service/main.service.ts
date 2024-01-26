@@ -53,6 +53,7 @@ export class MainService {
       "name": "Menu",
       "open": false,
       "url": "/menu",
+      "href": "assets/doc/menu.pdf",
     },  
     {
       "name": "Contact us",
