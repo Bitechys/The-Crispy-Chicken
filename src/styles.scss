@@ -276,6 +276,9 @@ h1{
 .img-carousel .owl-item .img-item {
   width: 100%;
   min-width: 300px;
+  @include sm{
+    width: 720px;
+  }
 }
 
 .img-carousel .owl-item.center .img-item {
