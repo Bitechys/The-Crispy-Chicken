@@ -16,6 +16,7 @@ import { HalalPolicyComponent } from './pages/halal-policy/halal-policy.componen
 import { FranchiseComponent } from './pages/franchise/franchise.component';
 import { CateringComponent } from './pages/catering/catering.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { MenuImgComponent } from './pages/menu-img/menu-img.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MenuComponent } from './pages/menu/menu.component';
     HalalPolicyComponent,
     FranchiseComponent,
     CateringComponent,
-    MenuComponent
+    MenuComponent,
+    MenuImgComponent,
   ],
   imports: [
     BrowserModule,

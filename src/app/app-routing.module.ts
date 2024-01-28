@@ -10,6 +10,7 @@ import { FranchiseComponent } from './pages/franchise/franchise.component';
 import { CateringComponent } from './pages/catering/catering.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { AboutComponent } from './pages/about/about.component';
+import { MenuImgComponent } from './pages/menu-img/menu-img.component';
 
 const routes: Routes = [
   {
@@ -22,12 +23,16 @@ const routes: Routes = [
     component : HomeComponent
   },
   {
-    path : "about",
+    path : "about", 
     component : AboutComponent
   },
+  // {
+  //   path : "menu",
+  //   component : MenuComponent
+  // },
   {
     path : "menu",
-    component : MenuComponent
+    component : MenuImgComponent 
   },
   {
     path : "services/franchise",

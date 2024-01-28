@@ -44,8 +44,8 @@
             <ng-container *ngFor="let item of this.service.menu; let i = index;">
               <!-- <a routerLink="{{item.url}}" class="nav-item nav-link">{{item.name}}</a> -->
               <div class="nav-item dropdown"  (mouseover)="hover(i)" (mouseout)="hover(-1)">
-                <!-- <a  [href]="item!.href ? item.href : null" target="_blank" class="nav-link rel" [routerLink]="!item.href ? item.url : null" routerLinkActive="active" [class.dropdown-toggle]="item.child" data-bs-toggle="dropdown">{{item.name}} <span><img src="assets/image/halal-logo.png" alt="" class="halal_s" *ngIf="item.name == 'Our food'"></span></a> -->
-                <a *ngIf="item?.href; else routerLink" [attr.href]="item.href" target="_blank" class="nav-link rel">
+                <a class="nav-link rel" [routerLink]="item.url" routerLinkActive="active" [class.dropdown-toggle]="item.child" data-bs-toggle="dropdown">{{item.name}} <span><img src="assets/image/halal-logo.png" alt="" class="halal_s" *ngIf="item.name == 'Our food'"></span></a>
+                <!-- <a *ngIf="item?.href; else routerLink" [attr.href]="item.href" target="_blank" class="nav-link rel">
                   {{ item.name }}
                   <span *ngIf="item?.name === 'Our food'">
                     <img src="assets/image/halal-logo.png" alt="" class="halal_s">
@@ -59,7 +59,7 @@
                       <img src="assets/image/halal-logo.png" alt="" class="halal_s">
                     </span>
                   </a>
-                </ng-template>
+                </ng-template> -->
                 <div class="dropdown-menu m-0" *ngIf="item.child" [class.show]="this.selected == i">
                   <ng-container *ngFor="let item1 of this.item.child; let j = index;">
                     <a [routerLink]="item1.url" class="dropdown-item c-pointer">{{item1.name}}</a>
@@ -116,11 +116,11 @@
         <ng-container *ngFor="let item of this.service.menu; let i = index;">
             <!-- <a routerLink="{{item.url}}" class="nav-item nav-link">{{item.name}}</a> -->
             <div class="sidebar" (click)="show(i)" >
-              <!-- <a class="main" target="_blank" [routerLink]="!item.child ? item.url : null" data-bs-dismiss="offcanvas"  [attr.data-bs-target]="!item.child ? '#offcanvasResponsive' : null">
+              <a class="main" [routerLink]="!item.child ? item.url : null" data-bs-dismiss="offcanvas"  [attr.data-bs-target]="!item.child ? '#offcanvasResponsive' : null">
                 <div class="rel">{{item.name}} <span><img src="assets/image/halal-logo.png" alt="" class="halal_l" *ngIf="item.name == 'Our food'"></span></div>
                 <div class="plus" [class.minus]="this.c_selected[i]" *ngIf="item.child"></div>
-              </a> -->
-              <a *ngIf="item?.href; else routerLink" [attr.href]="item.href" target="_blank" class="main">
+              </a>
+              <!-- <a *ngIf="item?.href; else routerLink" [attr.href]="item?.href" target="_blank" class="main">
                 <div class="rel">{{item.name}} <span><img src="assets/image/halal-logo.png" alt="" class="halal_l" *ngIf="item.name == 'Our food'"></span></div>
                 <div class="plus" [class.minus]="this.c_selected[i]" *ngIf="item.child"></div>
               </a>
@@ -130,7 +130,7 @@
                 <div class="rel">{{item.name}} <span><img src="assets/image/halal-logo.png" alt="" class="halal_l" *ngIf="item.name == 'Our food'"></span></div>
                 <div class="plus" [class.minus]="this.c_selected[i]" *ngIf="item.child"></div>
                 </a>
-              </ng-template>
+              </ng-template> -->
               <ul *ngIf="item.child" [class.show]="this.c_selected[i]">
                 <ng-container *ngFor="let item1 of this.item.child; let j = index;">
                     <li routerLink="{{item1.url}}" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive">{{item1.name}}</li>

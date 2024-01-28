@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MainService } from 'src/app/service/main.service';
 import { gsap } from 'gsap/all';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -53,7 +54,7 @@ export class MainService {
       "name": "Menu",
       "open": false,
       "url": "/menu",
-      "href": "assets/doc/menu.pdf",
+      // "href": "assets/doc/menu.pdf",
     },  
     {
       "name": "Contact us",
