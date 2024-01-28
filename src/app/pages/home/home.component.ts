@@ -127,7 +127,7 @@ export class HomeComponent implements AfterViewInit {
 
   imgcaro_2 = [
     {
-      "img": "assets/image/caro/caro4.png",
+      "img": "assets/image/caro/caro7.png",
     },
     {
       "img": "assets/image/caro/caro5.png",
@@ -135,9 +135,9 @@ export class HomeComponent implements AfterViewInit {
     {
       "img": "assets/image/caro/caro6.png",
     },
-    // {
-    //   "img": "assets/image/caro/caro4.png",
-    // },
+    {
+      "img": "assets/image/caro/caro4.png",
+    },
   ]
 
   caro = [
