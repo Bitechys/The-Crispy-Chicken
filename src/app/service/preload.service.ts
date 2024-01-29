@@ -15,6 +15,12 @@ export class PreloadService {
     'assets/image/unsplash1.jpg',
     'assets/image/home.png',
     'assets/image/logo.jpg',
+    'assets/image/menu/m1.webp',
+    'assets/image/menu/m2.webp',
+    'assets/image/menu/m3.webp',
+    'assets/image/menu/m4.webp',
+    'assets/image/menu/m5.webp',
+    'assets/image/menu/m6.webp',
 
     'assets/font/Roboto-Regular.ttf',
     'assets/font/Roboto-Bold.ttf',
