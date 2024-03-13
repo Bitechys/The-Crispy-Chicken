@@ -575,19 +575,35 @@ h1{
 // }
 
 .goog-te-gadget-simple {
-  background-color: transparent !important;
-  border: 1px solid #4c4c4c !important;
+  background-color: $primary !important;
+  border: 1px solid #fff !important;
   font-size: 10pt !important;
   border-radius: 20px;
   font-weight: 500;
   display: inline-block;
   padding: 5px 10px !important;
+  padding-left: 25px !important;
   cursor: pointer;
   zoom: 1;
+  position: relative;
+
+  &::before{
+    content: "";
+    top: 0px;
+    z-index: 99999;
+    left: 8px;
+    position: absolute;
+    width: 15px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("assets/image/trans.svg") ;
+  }
 }
 
 .goog-te-gadget-simple span {
-  color: #4c4c4c !important;
+  color: #fff !important;
 }
 
 //////custom gt
