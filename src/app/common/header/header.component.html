@@ -25,7 +25,7 @@
   </div>
   <div class="container-xxl p-0 " >
     <nav class="navbar shadow navbar-expand-lg navbar px-4 px-lg-5 py-3 py-lg-0" [class.sticky-top]="this.isSticky" [class.home]="this.router.url == '/home'">
-      <div class="container faunset-i">
+      <div class="container faunset-i facenter">
         <a href="" class="navbar-brand p-0 ">
           <!-- <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1> -->
           <img src="assets/image/logo.jpg" alt="Logo" class="logo">
@@ -36,9 +36,15 @@
         <!-- <button class="btn btn-primary navbar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
           <span class="fa fa-bars"></span>
         </button> -->
-        <button title="Menu" class="btn btn-primary d-lg-none fit-height" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
-          <span class="fa fa-bars"></span>
-        </button>
+        <div class="g-translate d-flex fcenter ms-3 d-lg-none">
+          <div id="google_translate_element"></div>
+        </div>
+
+        <div class="d-flex fcenter d-lg-none">
+          <button title="Menu" class="btn btn-primary  fit-height" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
+            <span class="fa fa-bars"></span>
+          </button>
+        </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0 h-100 align-items-stretch">
             <ng-container *ngFor="let item of this.service.menu; let i = index;">
@@ -70,7 +76,6 @@
           </div>
           <!-- <a href="" class="btn btn-tertiary py-2 px-4">Book A Table</a> -->
           <div class="g-translate d-flex fcenter ms-3">
-            <img src="assets/image/trans.svg" alt="">
             <div id="google_translate_element"></div>
           </div>
         </div>
