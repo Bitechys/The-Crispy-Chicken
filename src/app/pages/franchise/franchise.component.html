@@ -480,17 +480,18 @@
             <div class="formfill">
                 <h5 class="section-title ff-secondary text-start text-primary fw-normal" data-aos="fade-right" data-aos-duration="1000">Be Part Of Us</h5>
                 <h1 class="text-secondary mb-4" data-aos="fade-up" data-aos-duration="1000">Fill Up Your Details</h1>
-                <form>
+                <form action="https://api.web3forms.com/submit" method="POST"   >
+                    <input type="hidden" name="access_key" value="092d700d-79a3-4188-8e07-ca90a84e710c">
                     <div class="row g-3" data-aos="fade-up" data-aos-duration="1000">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
                                 <label for="email">Your Email</label>
                             </div>
                         </div>
@@ -512,19 +513,19 @@
                         </div> -->
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="number" class="form-control" id="number" placeholder="Phone Number">
+                                <input type="number" name="number" class="form-control" id="number" placeholder="Phone Number">
                                 <label for="number">Phone Number</label>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="location" class="form-control" id="location" placeholder="Preferred Location">
+                                <input type="location" name="location" class="form-control" id="location" placeholder="Preferred Location">
                                 <label for="location">Preferred Location</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Special Request" id="message" style="height: 100px"></textarea>
                                 <label for="message">Why Us? (The Crispy Chicken)</label>
                             </div>
                         </div>
