@@ -37,6 +37,7 @@
     "@angular/compiler-cli": "^14.0.0",
     "@types/aos": "^3.0.4",
     "@types/gsap": "^3.0.0",
+    "@types/intl-tel-input": "^18.1.4",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",

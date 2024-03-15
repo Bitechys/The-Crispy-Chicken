@@ -430,7 +430,7 @@
 
 <!-- Join -->
 <div class="bgItem section">
-    <div class="container mb-5 px-5 mx-5">
+    <div class="container mb-5 mx-5">
         <div class="text-center">
             <!-- <h5 class="section-title ff-secondary text-center text-secondary fw-normal" data-aos="fade-right" data-aos-duration="1000">Benefit With Us</h5> -->
             <h1 class="text-secondary mb-4" data-aos="fade-up" data-aos-duration="1000">Join Our Family of Entrepreneurs</h1>
@@ -476,16 +476,16 @@
         <div class="col-lg-6 bg-dark">
             <img src="assets/image/about-img1.png" alt="" class="img-fluid d-none d-sm-none d-md-block" data-aos="fade-left" data-aos-duration="1000">
         </div>
-        <div class="col-md-6 bg-dark d-flex align-items-center">
+        <div class="col-lg-12 col-md-12 bg-dark d-flex align-items-center">
             <div class="formfill">
                 <h5 class="section-title ff-secondary text-start text-primary fw-normal" data-aos="fade-right" data-aos-duration="1000">Be Part Of Us</h5>
                 <h1 class="text-secondary mb-4" data-aos="fade-up" data-aos-duration="1000">Fill Up Your Details</h1>
-                <form action="https://api.web3forms.com/submit" method="POST"   >
+                <!-- <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="092d700d-79a3-4188-8e07-ca90a84e710c">
                     <div class="row g-3" data-aos="fade-up" data-aos-duration="1000">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                                 <label for="name">Your Name</label>
                             </div>
                         </div>
@@ -495,22 +495,6 @@
                                 <label for="email">Your Email</label>
                             </div>
                         </div>
-                        <!-- <div class="col-md-12">
-                            <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                <label for="datetime">Date & Time</label>
-                            </div>
-                        </div> -->
-                        <!-- <div class="col-md-6">
-                            <div class="form-floating">
-                                <select class="form-select" id="select1">
-                                  <option value="1">People 1</option>
-                                  <option value="2">People 2</option>
-                                  <option value="3">People 3</option>
-                                </select>
-                                <label for="select1">No Of People</label>
-                              </div>
-                        </div> -->
                         <div class="col-md-12">
                             <div class="form-floating">
                                 <input type="number" name="number" class="form-control" id="number" placeholder="Phone Number">
@@ -530,7 +514,85 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" type="submit"><b>GET A FRANCHISE</b></button>
+                            <button class="btn btn-primary w-100 py-3"><b>GET A FRANCHISE</b></button>
+                            <button>submit</button>
+                        </div>
+                    </div>
+                </form> -->
+                <form action="https://api.web3forms.com/submit" method="POST" [formGroup]="franchiseForm">
+                    <input type="hidden" name="access_key" value="092d700d-79a3-4188-8e07-ca90a84e710c">
+                    <div class="row g-3" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <!-- <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                                <label for="name">Your Name</label> -->
+                                <input type="text" id="name" name="name" class="form-control" id="name" placeholder="Your Name" formControlName="name">
+                                <label for="email">Your Name</label>
+                                <div class="mt-1 text-white" *ngIf="franchiseForm.get('name').invalid && franchiseForm.get('name').touched">
+                                <div *ngIf="franchiseForm.get('name').errors.required">Name is required.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="email" name="email" formControlName="email" class="form-control" id="email" placeholder="Your Email">
+                                <label for="email">Your Email</label>
+                                <div *ngIf="franchiseForm.get('email').invalid && franchiseForm.get('email').touched">
+                                <div *ngIf="franchiseForm.get('email').errors.required">Email is required.</div>
+                                <div *ngIf="franchiseForm.get('email').errors.email">Invalid email format.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- <div class="form-floating"> -->
+                                <!-- <input type="number" name="number" class="form-control" id="number" placeholder="Phone Number">
+                                <label for="number">Phone Number</label> -->
+                                <!-- <div class="form-group">
+                                    <input type="tel" id="mobile_code" class="form-control" placeholder="Phone Number" name="name">
+                                </div> -->
+                                <!-- <select >
+                                    <option *ngFor="let countryCode of allCountries" [value]="countryCode[1]">
+                                      {{ countryCode[0] }} ({{ countryCode[1] }})
+                                    </option>
+                                  </select>
+                                  
+                                  <p>Selected Country Code: {{ selectedCountryCode }}</p> -->
+                            <!-- </div> -->
+                            <div class="form-floating">
+                                <div class="d-flex ">
+                                    <select >
+                                        <option *ngFor="let countryCode of allCountries" [value]="countryCode[1]">
+                                          {{ countryCode[0] }} ({{ countryCode[1] }})
+                                        </option>
+                                      </select>
+                                      <div>
+                                        <input type="tel" name="phone" formControlName="phone" class="form-control" id="phone" >
+                                        <label for="phone">Your Email</label>
+                                      </div>
+                                      <p>Selected Country Code: {{ selectedCountryCode }}</p>
+                                </div>
+                                
+                                <div *ngIf="franchiseForm.get('email').invalid && franchiseForm.get('email').touched">
+                                <div *ngIf="franchiseForm.get('email').errors.required">Email is required.</div>
+                                <div *ngIf="franchiseForm.get('email').errors.email">Invalid email format.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-floating">
+                                <input type="location" name="location" class="form-control" id="location" placeholder="Preferred Location">
+                                <label for="location">Preferred Location</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" name="message" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                <label for="message">Why Us? (The Crispy Chicken)</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3"><b>GET A FRANCHISE</b></button>
+                            <button>submit</button>
                         </div>
                     </div>
                 </form>

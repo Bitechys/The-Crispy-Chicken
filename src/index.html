@@ -34,6 +34,7 @@
         if (document.getElementById("google_translate_element") != null) {
           new google.translate.TranslateElement({
             pageLanguage: 'en',
+            includedLanguages: "en,fr,ar",
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
           }, 'google_translate_element');
         } else {
@@ -56,6 +57,7 @@
   <script type="text/javascript"
     src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
+  </script>
 </body>
 
 </html>

@@ -17,6 +17,7 @@ import { FranchiseComponent } from './pages/franchise/franchise.component';
 import { CateringComponent } from './pages/catering/catering.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuImgComponent } from './pages/menu-img/menu-img.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { MenuImgComponent } from './pages/menu-img/menu-img.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // NgxIntlTelInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
