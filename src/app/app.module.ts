@@ -18,6 +18,7 @@ import { CateringComponent } from './pages/catering/catering.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MenuImgComponent } from './pages/menu-img/menu-img.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OnlyNumbersDirective } from './only-numbers.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CateringComponent,
     MenuComponent,
     MenuImgComponent,
+    OnlyNumbersDirective,
   ],
   imports: [
     BrowserModule,

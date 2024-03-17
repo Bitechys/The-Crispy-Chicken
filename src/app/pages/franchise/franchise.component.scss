@@ -195,3 +195,73 @@
 }
 
 
+// countryCode
+
+.form-floating{
+  width: 100% !important;
+}
+
+.selected-country-img{
+
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+
+  img{
+    width: 40px;
+    height: 40px;
+  }
+}
+
+select.countryCode{
+  background-color: $primary;
+  width: 180px;
+  border: none !important;
+  font-weight: bold;
+  color: white;
+  &:focus-visible {
+    outline: none !important;
+  }
+  option{
+    background-color: white;
+    color: #000000;
+    left: -45px;
+  }
+}
+
+.form-control{
+  &.excep{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}
+
+.dial-code{
+  display: flex;
+}
+
+.validateMsg{
+  color: $primary;
+  margin-top: 10px;
+  font-size: 80%;
+}
+
+.formSuccess{
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  padding: 20px;
+  font-size: 22px;
+  text-align: center;
+}
+
+.formFail{
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  padding: 20px;
+  font-size: 22px;
+  text-align: center;
+}
