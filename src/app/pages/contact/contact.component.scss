@@ -146,3 +146,27 @@
   .btn.btn-social:hover {
     color: var(--primary);
   }
+
+  .validateMsg{
+    color: $primary;
+    margin-top: 10px;
+    font-size: 80%;
+  }
+
+  .formSuccess{
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+  }
+  
+  .formFail{
+    margin-top: 10px;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+  }

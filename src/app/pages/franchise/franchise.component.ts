@@ -13,7 +13,8 @@ export class FranchiseComponent implements OnInit {
 
   franchiseForm : any = FormGroup;
 
-  mailAccessKey = '9846f83c-1fcf-4aa0-bc53-a219ee76f8f1';
+  // mailAccessKey = '9846f83c-1fcf-4aa0-bc53-a219ee76f8f1';
+  mailAccessKey = this.service.mailAccessKey;
 
   formFeed : boolean = false
 
@@ -34,6 +35,16 @@ export class FranchiseComponent implements OnInit {
     });
    
 
+  }
+
+  formReset(){
+    this.franchiseForm = this.fb.group({
+      name: [''],
+      email: [''],
+      phone: [''],
+      location: [''],
+      message:[''],
+    });
   }
 
   private color: string = '';
@@ -62,9 +73,8 @@ export class FranchiseComponent implements OnInit {
     formData.append('phone', this.franchiseForm.value.phone);
     // -- email customization
     formData.append('access_key', '7db731ea-8288-44ad-ab77-74cacad84484');
-    formData.append('subject', 'Email Support From Your Site');
-    formData.append('from_name', 'Contact Notification');
-
+    formData.append('subject', 'Franchise Request From Your Site');
+    formData.append('from_name', 'Franchise Notification');
     console.log(formData, "formData")
   }
   
@@ -96,8 +106,8 @@ export class FranchiseComponent implements OnInit {
 
     // -- email customization
     formData.append('access_key', this.mailAccessKey);
-    formData.append('subject', 'New Submission from your Site');
-    formData.append('from_name', 'The Crispy Chicken - Contact Notification');
+    formData.append('subject', 'New Franchise Request from your Site');
+    formData.append('from_name', 'The Crispy Chicken - Franchise Notification');
 
     console.log(formData, "formData")
   
@@ -110,8 +120,9 @@ export class FranchiseComponent implements OnInit {
       this.alertMessage = 'Email sent successfully!';
       this.color = 'green';
       this.formFeed = true;
-      this.franchiseForm.reset();
-      this.franchiseForm.value.code = '+91';
+      // this.franchiseForm.reset();
+      this.formReset();
+      // this.franchiseForm.value.code = '+91';
 
     } catch (err) {
       // handle error
@@ -216,6 +227,19 @@ export class FranchiseComponent implements OnInit {
     // Check if the key pressed is space and if it's the first character
     if (event.key === ' ' && event.target['selectionStart'] === 0) {
       event.preventDefault();
+    }
+  }
+
+  updateFirstWord(optionValue: any): void {
+    const firstWord = optionValue.split(' ')[0]; // Split by space and take the first word
+    const selectedIndex = this.service.new.indexOf(optionValue);
+    this.service.new[selectedIndex] = firstWord;
+  }
+
+  onSelectChange(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    if (target && target.value) {
+      this.updateFirstWord(target.value);
     }
   }
 }

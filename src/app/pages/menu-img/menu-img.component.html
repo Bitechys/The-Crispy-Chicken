@@ -23,23 +23,16 @@
     </div>
 </div> -->
 
-<div class="menucontain">
-    <div class="">
-        <img src="assets/image/menu/m1.webp" class="img-fluid" alt="">
-    </div>
-    <div class="">
-        <img src="assets/image/menu/m2.webp" class="img-fluid" alt="">
-    </div>
-    <div class="">
-        <img src="assets/image/menu/m3.webp" class="img-fluid" alt="">
-    </div>
-    <div class="">
-        <img src="assets/image/menu/m4.webp" class="img-fluid" alt="">
-    </div>
-    <div class="">
-        <img src="assets/image/menu/m5.webp" class="img-fluid" alt="">
-    </div>
-    <div class="">
-        <img src="assets/image/menu/m6.webp" class="img-fluid" alt="">
+<div class="menucontain" *ngIf="this.service.currentLang !== 'Select Language'">
+    <div class="" *ngFor="let item of [].constructor(6); let i = index">
+        <img src="assets/image/menu/{{this.service.currentLang}}/m{{i+1}}.webp" class="img-fluid" alt="">
     </div>
 </div>
+
+<div class="menucontain" *ngIf="this.service.currentLang == 'Select Language'">
+    <div class="" *ngFor="let item of [].constructor(6); let i = index">
+        <img src="assets/image/menu/English/m{{i+1}}.webp" class="img-fluid" alt="">
+    </div>
+</div>
+
+<!-- <button (click)="try()">try </button> -->

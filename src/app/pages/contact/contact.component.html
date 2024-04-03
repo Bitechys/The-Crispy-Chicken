@@ -7,23 +7,60 @@
                     <div class="row">
                         <div class="col-md-10">
                             <div class="contact_form_inner">
-                                <div class="contact_field">
+                                <div class="contact_field" [formGroup]="contactForm">
                                     <h3>Write to Us</h3>
                                     <p>Feel Free to contact us any time. We will get back to you as soon as we can!.</p>
-                                    <input type="text" class="form-control form-group mb-2" placeholder="Name" />
-                                    <input type="text" class="form-control form-group mb-2" placeholder="Email" />
-                                    <textarea class="form-control form-group" placeholder="Message"></textarea>
-                                    <button class="contact_form_submit">Send</button>
+                                    <input type="text" id="name" name="name" class="form-control" id="name"
+                                        (keydown)="preventFirstLetterSpace($event)" placeholder="Name"
+                                        formControlName="name" />
+                                    <div class="validateMsg"
+                                        *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched">
+                                        <div *ngIf="contactForm.get('name').errors.required">Name is required.</div>
+                                    </div>
+                                    <input type="email" name="email" formControlName="email" class="form-control"
+                                        (keydown)="preventFirstLetterSpace($event)" id="email" placeholder="Email" />
+                                    <div class="validateMsg"
+                                        *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched">
+                                        <div *ngIf="contactForm.get('email').errors.required">Email is required.</div>
+                                        <div *ngIf="contactForm.get('email').errors.email">Invalid email format.</div>
+                                    </div>
+                                    <textarea class="form-control" formControlName="message" name="message"
+                                        placeholder="Message" (keydown)="preventFirstLetterSpace($event)" id="message"
+                                        style="height: 100px"></textarea>
+                                    <!-- <button class="contact_form_submit">Send</button> -->
+                                    <!-- submit button -->
+                                    <button [disabled]="contactForm.invalid || onSubmit"
+                                        class="btn contact_form_submit btn-primary w-100 py-3" (click)="submitEmail()">
+                                        <ng-container *ngIf="onSubmit === false; else submittingEmail">
+                                            <b>Send</b>
+                                        </ng-container>
+                                        <ng-template #submittingEmail>
+                                            <div>Sending....</div>
+                                        </ng-template>
+                                    </button>
+
+                                    <!-- Alert -->
+                                    <div *ngIf="showAlert">
+                                        <!-- <p [ngClass]="alertColor" class="font-semibold">
+                                    {{ alertMessage }}
+                                </p> -->
+                                        <div *ngIf="formFeed">
+                                            <div class="formSuccess">{{ alertMessage }}</div>
+                                        </div>
+                                        <div *ngIf="!formFeed">
+                                            <div class="formFail">{{ alertMessage }}</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="right_conatct_social_icon d-flex align-items-end">
-                               <div class="socil_item_inner d-flex">
-                                  <!-- <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                                <div class="socil_item_inner d-flex">
+                                    <!-- <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
                                   <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                   <li><a href="#"><i class="fab fa-twitter"></i></a></li> -->
-                               </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -31,8 +68,8 @@
                         <div>
                             <h3 class="white text-start mb-4">Contact details:</h3>
                             <!-- <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p> -->
-                            <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                            <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                            <p class="mb-3"><i class="fa fa-phone-alt me-3"></i>{{this.service.phoneNumber}}</p>
+                            <p class="mb-3"><i class="fa fa-envelope me-3"></i>{{this.service.mailId}}</p>
                             <p class="mb-3 text-secondary d-flex ">
                                 <i class="fa fa-map-marker-alt me-3"></i>
                                 <span class="colalign">
@@ -40,7 +77,8 @@
                                     <span>SYED AMEERUDEEN,</span> -->
                                     <span>37 rue de L’abondance,</span>
                                     <span>95800 cergy-saint Christophe,</span>
-                                    <span class="d-flex align-items-center gap-2">FRANCE <div class="flag france"></div></span>
+                                    <span class="d-flex align-items-center gap-2">FRANCE <div class="flag france"></div>
+                                        </span>
                                 </span>
                             </p>
                         </div>
@@ -64,15 +102,18 @@
             <div class="col-md-10 offset-md-1">
                 <div class="map_inner">
                     <div class="text-center">
-                        <h5 class="section-title ff-secondary text-center text-primary fw-normal" data-aos="fade-right" data-aos-duration="1000">Visit US</h5>
+                        <h5 class="section-title ff-secondary text-center text-primary fw-normal" data-aos="fade-right"
+                            data-aos-duration="1000">Visit US</h5>
                         <h1 class="mb-4" data-aos="fade-up" data-aos-duration="1000">Find Us On Google Map</h1>
-                      </div>
+                    </div>
                     <div class="map_bind">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471220.5631094339!2d88.04952462217592!3d22.6757520733225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1596988408134!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471220.5631094339!2d88.04952462217592!3d22.6757520733225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1596988408134!5m2!1sen!2sin"
+                            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-

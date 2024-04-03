@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { MainService } from 'src/app/service/main.service';
 
 @Component({
   selector: 'app-menu-img',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuImgComponent implements OnInit {
 
-  constructor() { }
+  pageLanguage: any;
+
+  constructor(public cookies: CookieService, public service: MainService) { 
+    // this.pageLanguage = this.cookies.get('googtrans');
+  }
 
   ngOnInit(): void {
+  
   }
 
 }

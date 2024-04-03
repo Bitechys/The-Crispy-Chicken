@@ -213,6 +213,10 @@
     width: 40px;
     height: 40px;
   }
+
+  @include sm{
+    display: none;
+  }
 }
 
 select.countryCode{
@@ -221,6 +225,9 @@ select.countryCode{
   border: none !important;
   font-weight: bold;
   color: white;
+  @include sm{
+    width: 80px;
+  }
   &:focus-visible {
     outline: none !important;
   }

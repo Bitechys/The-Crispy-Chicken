@@ -578,7 +578,7 @@
                                         <img [src]="getSelectedCountryImage()" alt="{{ getSelectedCountryName() }}"
                                             class="country-flag">
                                     </div>
-                                    <select class="countryCode pointer" formControlName="code" name="code" placeholder="code">
+                                    <select class="countryCode pointer" formControlName="code" name="code" placeholder="code" (change)="onSelectChange($event)">
                                         <option *ngFor="let countryCode of this.service.new"
                                             [value]="countryCode.dial_code" [selected]="countryCode.name == 'India'">
                                             ({{countryCode.dial_code}}) {{countryCode.name}}

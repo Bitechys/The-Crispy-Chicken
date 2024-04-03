@@ -8,7 +8,13 @@ export class MainService {
 
   constructor() { }
 
+  mailId = "franchise@thecrispychicken.net";
+  phoneNumber = "+91 97880 47779"; 
+  mailAccessKey = "fae2f09c-7dd5-4813-b586-1c258cd13ca3";
+
   scroll = false
+
+  currentLang: any;
 
   ngOnInit(): void {
     this.scroll = false;
