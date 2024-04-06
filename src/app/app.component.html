@@ -8,7 +8,7 @@
     <div class="test">
         <app-header></app-header>
     </div>
-    <div class="minus">
+    <div class="minus" [class.arabicAlign]="this.service.currentLang == 'Arabic'">
         <router-outlet></router-outlet>
     </div>
     <app-footer></app-footer>
