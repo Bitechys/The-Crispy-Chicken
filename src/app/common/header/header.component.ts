@@ -40,6 +40,8 @@ export class HeaderComponent implements AfterViewInit {
       console.log(this.service.currentLang, 'this.service.currentLang');
     });
 
+    this.service.arabicStylesTrigger();
+
   }
 
   selected = -1

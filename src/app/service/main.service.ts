@@ -20,6 +20,11 @@ export class MainService {
     this.scroll = false;
   }
 
+  arabicStylesTrigger(){
+    const languageContainer = document.querySelector('.arabic-container') as HTMLElement;
+    languageContainer.setAttribute('data-language', this.currentLang);
+  }
+
   menu = [
     {
       "name": "Home",
