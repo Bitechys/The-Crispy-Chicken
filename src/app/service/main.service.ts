@@ -9,7 +9,8 @@ export class MainService {
   constructor() { }
 
   mailId = "franchise@thecrispychicken.net";
-  phoneNumber = "+91 97880 47779"; 
+//   phoneNumber = "+91 97880 47779";
+  phoneNumber = "+33-700-555-358"; 
   mailAccessKey = "fae2f09c-7dd5-4813-b586-1c258cd13ca3";
 
   scroll = false
@@ -20,10 +21,15 @@ export class MainService {
     this.scroll = false;
   }
 
-  arabicStylesTrigger(){
-    const languageContainer = document.querySelector('.arabic-container') as HTMLElement;
+ arabicStylesTrigger() {
+  const languageContainer = document.querySelector('.arabic-container') as HTMLElement;
+  if (languageContainer) {
     languageContainer.setAttribute('data-language', this.currentLang);
+  } else {
+    console.warn('.arabic-container not found in DOM');
   }
+}
+
 
   menu = [
     {

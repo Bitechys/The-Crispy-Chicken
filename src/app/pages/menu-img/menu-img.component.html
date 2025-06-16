@@ -23,7 +23,7 @@
     </div>
 </div> -->
 
-<div class="menucontain" *ngIf="this.service.currentLang !== 'Select Language'">
+<!-- <div class="menucontain" *ngIf="this.service.currentLang !== 'Select Language'">
     <div class="" *ngFor="let item of [].constructor(6); let i = index">
         <img src="assets/image/menu/{{this.service.currentLang}}/m{{i+1}}.webp" class="img-fluid" alt="">
     </div>
@@ -33,6 +33,14 @@
     <div class="" *ngFor="let item of [].constructor(6); let i = index">
         <img src="assets/image/menu/English/m{{i+1}}.webp" class="img-fluid" alt="">
     </div>
+</div> -->
+<div class="menucontain">
+  <div *ngFor="let item of [].constructor(6); let i = index">
+    <img 
+      [src]="'assets/image/menu/' + (service.currentLang !== 'Select Language' ? service.currentLang : 'English') + '/m' + (i + 1) + '.webp'" 
+      class="img-fluid" 
+      alt="menu image">
+  </div>
 </div>
 
 <!-- <button (click)="try()">try </button> -->
